@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoticus | Craft Cannabis for Wellness</title>
+    <meta name="description" content="Exoticus offers meticulously crafted cannabis products focused on wellness, purity, and the art of cultivation.">
+    <style>
+        /* CSS Reset and Variables */
+        :root {
+            --charcoal: #2A2A2A;
+            --warm-stone: #E8E2DB;
+            --off-white: #F8F5F2;
+            --sage: #8A9B69;
+            --terracotta: #B3543E;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 8rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: var(--charcoal);
+            background-color: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        button {
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .section {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--sage);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--terracotta);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--sage);
+            color: var(--sage);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--sage);
+            color: white;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(248, 245, 242, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: var(--spacing-sm) 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .logo span {
+            color: var(--sage);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-md);
+        }
+
+        .nav-links a {
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--sage);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(42, 42, 42, 0.4), rgba(42, 42, 42, 0.4)), 
+                        url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Pillars Section */
+        .pillars {
+            background-color: white;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .pillar-card {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-md);
+            background-color: var(--warm-stone);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--sage);
+        }
+
+        /* Featured Strains */
+        .strains-preview {
+            background-color: var(--warm-stone);
+        }
+
+        .strains-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strains-scroll {
+            display: flex;
+            gap: var(--spacing-md);
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: var(--spacing-sm) 0;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .strains-scroll::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+
+        .strain-card {
+            min-width: 280px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .strain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .strain-image {
+            height: 200px;
+            background-color: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 3rem;
+        }
+
+        .strain-content {
+            padding: var(--spacing-md);
+        }
+
+        .strain-effect {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--warm-stone);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            opacity: 0.7;
+        }
+
+        .scroll-btn:hover {
+            opacity: 1;
+        }
+
+        .scroll-left {
+            left: 0;
+        }
+
+        .scroll-right {
+            right: 0;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: white;
+        }
+
+        .process-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--sage);
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .process-timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: var(--warm-stone);
+            transform: translateX(-50%);
+        }
+
+        .process-step {
+            display: flex;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .process-step:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .process-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .process-content {
+            flex: 1;
+            padding: var(--spacing-md);
+            background-color: var(--off-white);
+            border-radius: var(--border-radius);
+        }
+
+        .process-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        /* Facility Section */
+        .facility {
+            background-color: var(--warm-stone);
+        }
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .facility-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .facility-image {
+            height: 200px;
+            background-color: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 2rem;
+        }
+
+        .facility-content {
+            padding: var(--spacing-md);
+        }
+
+        /* Story Section */
+        .story {
+            background-color: white;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--warm-stone);
+            margin: 0 auto var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 2rem;
+        }
+
+        .signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: var(--spacing-md);
+            color: var(--sage);
+        }
+
+        /* Brand Section */
+        .brand {
+            background-color: var(--off-white);
+        }
+
+        .brand-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .brand-text {
+            padding-right: var(--spacing-md);
+        }
+
+        .compliance {
+            background-color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .compliance h3 {
+            color: var(--sage);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Merchandise Section */
+        .merchandise {
+            background-color: white;
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .merch-card {
+            background-color: var(--off-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .merch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .merch-image {
+            height: 200px;
+            background-color: var(--warm-stone);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 2rem;
+        }
+
+        .merch-content {
+            padding: var(--spacing-md);
+            text-align: center;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--sage);
+            margin: var(--spacing-xs) 0;
+        }
+
+        /* Where to Buy Section */
+        .where-to-buy {
+            background-color: var(--warm-stone);
+        }
+
+        .map-container {
+            height: 400px;
+            background-color: var(--off-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage);
+            font-size: 1.5rem;
+        }
+
+        .locations-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .location-card {
+            background-color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .location-name {
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .location-address {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .contact-info {
+            padding-right: var(--spacing-md);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--warm-stone);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: var(--spacing-sm);
+            color: var(--sage);
+        }
+
+        .contact-form {
+            background-color: var(--off-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--sage);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-logo span {
+            color: var(--sage);
+        }
+
+        .footer-links h4 {
+            color: var(--warm-stone);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-links a:hover {
+            color: var(--sage);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .age-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 42, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            color: white;
+        }
+
+        .age-gate-content {
+            background-color: white;
+            color: var(--charcoal);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .age-gate-buttons {
+            display: flex;
+            gap: var(--spacing-sm);
+            justify-content: center;
+            margin-top: var(--spacing-md);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: var(--spacing-md);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .process-timeline:before {
+                left: 30px;
+            }
+
+            .process-step {
+                flex-direction: row !important;
+                padding-left: 80px;
+            }
+
+            .process-icon {
+                left: 30px;
+                transform: translateY(-50%);
+            }
+
+            .process-content {
+                width: 100%;
+            }
+
+            .scroll-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Age Verification Gate -->
+    <div class="age-gate" id="ageGate">
+        <div class="age-gate-content">
+            <h2>Age Verification Required</h2>
+            <p>You must be 21 years or older to enter this website. By entering, you confirm you are of legal age and agree to our Terms of Service and Privacy Policy.</p>
+            <div class="age-gate-buttons">
+                <button class="btn" id="confirmAge">I am 21 or older</button>
+                <button class="btn btn-outline" id="exitSite">Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Exotic<span>us</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#facility">Our Facility</a></li>
+                <li><a href="#strains">Our Strains</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#brand">Our Brand</a></li>
+                <li><a href="#merchandise">Merchandise</a></li>
+                <li><a href="#where-to-buy">Where to Buy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Craft Cannabis for Wellness</h1>
+            <p>Meticulously cultivated in small batches, Exoticus represents the pinnacle of purity, precision, and the art of cultivation.</p>
+            <a href="#strains" class="btn">Explore Our Strains</a>
+        </div>
+    </section>
+
+    <!-- Pillars Section -->
+    <section class="section pillars">
+        <div class="container">
+            <h2>Our Commitment to Excellence</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">♻️</div>
+                    <h3>Sustainable Cultivation</h3>
+                    <p>We employ regenerative agricultural practices that respect the earth and promote biodiversity.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🔬</div>
+                    <h3>Laboratory Tested</h3>
+                    <p>Every batch undergoes rigorous third-party testing to ensure purity, potency, and safety.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌿</div>
+                    <h3>Plant-Based Wellness</h3>
+                    <p>Our products are crafted to support balance, focus, and overall wellbeing through natural plant compounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Strains Section -->
+    <section class="section strains-preview" id="strains">
+        <div class="container">
+            <h2>Our Signature Strains</h2>
+            <div class="strains-container">
+                <button class="scroll-btn scroll-left" id="scrollLeft">‹</button>
+                <div class="strains-scroll" id="strainsScroll">
+                    <div class="strain-card">
+                        <div class="strain-image">🌅</div>
+                        <div class="strain-content">
+                            <span class="strain-effect">Uplifting & Focused</span>
+                            <h3>Morning Clarity</h3>
+                            <p>A sativa-dominant hybrid with bright citrus notes, perfect for creative endeavors and morning routines.</p>
+                        </div>
+                    </div>
+                    <div class="strain-card">
+                        <div class="strain-image">🌙</div>
+                        <div class="strain-content">
+                            <span class="strain-effect">Calming & Relaxing</span>
+                            <h3>Evening Harmony</h3>
+                            <p>An indica-leaning blend with earthy undertones, designed to ease tension and promote restful evenings.</p>
+                        </div>
+                    </div>
+                    <div class="strain-card">
+                        <div class="strain-image">⚖️</div>
+                        <div class="strain-content">
+                            <span class="strain-effect">Balanced & Centered</span>
+                            <h3>Daily Balance</h3>
+                            <p>A perfectly balanced hybrid that provides gentle elevation while maintaining mental clarity throughout the day.</p>
+                        </div>
+                    </div>
+                    <div class="strain-card">
+                        <div class="strain-image">🌄</div>
+                        <div class="strain-content">
+                            <span class="strain-effect">Elevating & Creative</span>
+                            <h3>Golden Hour</h3>
+                            <p>A unique terpene profile with floral notes that inspires creativity and enhances sensory experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-btn scroll-right" id="scrollRight">›</button>
+            </div>
+            <div style="text-align: center; margin-top: var(--spacing-md);">
+                <a href="#where-to-buy" class="btn">Find Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process" id="facility">
+        <div class="container">
+            <h2>Our Cultivation Process</h2>
+            <div class="process-stats">
+                <div class="stat">
+                    <span class="stat-number" id="stat1">0</span>
+                    <span class="stat-label">Days of Curation</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="stat2">0</span>
+                    <span class="stat-label">Square Feet</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="stat3">0</span>
+                    <span class="stat-label">Team Members</span>
+                </div>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-content">
+                        <h3>Propagation</h3>
+                        <p>Each plant begins as a carefully selected genetic specimen, propagated in our state-of-the-art nursery under precisely controlled conditions.</p>
+                    </div>
+                    <div class="process-icon">🌱</div>
+                </div>
+                <div class="process-step">
+                    <div class="process-content">
+                        <h3>Cultivation</h3>
+                        <p>Our plants are grown using sustainable methods, with attention to light cycles, nutrient balance, and environmental factors that optimize terpene development.</p>
+                    </div>
+                    <div class="process-icon">💧</div>
+                </div>
+                <div class="process-step">
+                    <div class="process-content">
+                        <h3>Harvest</h3>
+                        <p>Timing is critical. We harvest at peak maturity to ensure the full expression of each strain's unique characteristics and therapeutic potential.</p>
+                    </div>
+                    <div class="process-icon">✂️</div>
+                </div>
+                <div class="process-step">
+                    <div class="process-content">
+                        <h3>Curing & Packaging</h3>
+                        <p>Our slow-cure process preserves delicate compounds, followed by packaging in UV-protected, environmentally conscious materials.</p>
+                    </div>
+                    <div class="process-icon">📦</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facility Section -->
+    <section class="section facility">
+        <div class="container">
+            <h2>Our State-of-the-Art Facility</h2>
+            <div class="facility-grid">
+                <div class="facility-card">
+                    <div class="facility-image">🏭</div>
+                    <div class="facility-content">
+                        <h3>Climate-Controlled Environments</h3>
+                        <p>Our advanced HVAC systems maintain perfect temperature and humidity levels year-round for optimal plant health.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">🔍</div>
+                    <div class="facility-content">
+                        <h3>Quality Control Lab</h3>
+                        <p>Every batch is tested for potency, purity, and terpene profile to ensure consistent quality and safety.</p>
+                    </div>
+                </div>
+                <div class="facility-card">
+                    <div class="facility-image">🌞</div>
+                    <div class="facility-content">
+                        <h3>Sustainable Energy</h3>
+                        <p>We utilize solar power and energy-efficient lighting to minimize our environmental footprint.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section story" id="story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-content">
+                <div class="founder-image">👤</div>
+                <p>Exoticus was founded in 2018 by a team of horticultural specialists, wellness advocates, and scientists who shared a vision: to elevate cannabis cultivation to an art form while prioritizing therapeutic benefits and sustainable practices.</p>
+                <p>Our journey began with a simple observation—the cannabis market was divided between medical applications that lacked artistry and recreational products that overlooked nuance. We set out to bridge this gap, creating products that honor both the science and soul of the plant.</p>
+                <p>Today, our team continues to innovate while staying true to our core principles: purity, precision, and a deep respect for the natural world that provides these remarkable botanicals.</p>
+                <p class="signature">- The Exoticus Team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Section -->
+    <section class="section brand" id="brand">
+        <div class="container">
+            <h2>Our Brand Philosophy</h2>
+            <div class="brand-content">
+                <div class="brand-text">
+                    <p>At Exoticus, we believe that cannabis, when cultivated with intention and respect, can be a powerful tool for wellness and personal exploration.</p>
+                    <p>Our approach combines time-honored horticultural techniques with cutting-edge science, resulting in products of exceptional quality and consistency.</p>
+                    <p>We are committed to transparency, sustainability, and education—empowering our community to make informed choices about their wellbeing.</p>
+                </div>
+                <div class="compliance">
+                    <h3>OMMA Compliance & Lab Testing</h3>
+                    <p>Exoticus operates in full compliance with all Oklahoma Medical Marijuana Authority regulations. Our products are:</p>
+                    <ul>
+                        <li>Lab tested for potency and purity</li>
+                        <li>Packaged in child-resistant containers</li>
+                        <li>Labeled with comprehensive usage information</li>
+                        <li>Tracked through the state's inventory system</li>
+                    </ul>
+                    <p>Lab results are available for every batch upon request.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Merchandise Section -->
+    <section class="section merchandise" id="merchandise">
+        <div class="container">
+            <h2>Brand Merchandise</h2>
+            <div class="merch-grid">
+                <div class="merch-card">
+                    <div class="merch-image">👕</div>
+                    <div class="merch-content">
+                        <h3>Organic Cotton Tee</h3>
+                        <p class="price">$32.00</p>
+                        <p>Premium organic cotton with minimalist Exoticus branding.</p>
+                        <button class="btn" style="margin-top: var(--spacing-sm);">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image">🧢</div>
+                    <div class="merch-content">
+                        <h3>Logo Hat</h3>
+                        <p class="price">$28.00</p>
+                        <p>Structured cap with embroidered Exoticus logo.</p>
+                        <button class="btn" style="margin-top: var(--spacing-sm);">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image">🍶</div>
+                    <div class="merch-content">
+                        <h3>Ceramic Storage</h3>
+                        <p class="price">$45.00</p>
+                        <p>Handcrafted ceramic jar with airtight seal.</p>
+                        <button class="btn" style="margin-top: var(--spacing-sm);">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="merch-card">
+                    <div class="merch-image">📘</div>
+                    <div class="merch-content">
+                        <h3>Wellness Journal</h3>
+                        <p class="price">$24.00</p>
+                        <p>Hardcover journal for tracking your wellness journey.</p>
+                        <button class="btn" style="margin-top: var(--spacing-sm);">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where to Buy Section -->
+    <section class="section where-to-buy" id="where-to-buy">
+        <div class="container">
+            <h2>Where to Find Exoticus</h2>
+            <div class="map-container">
+                [Interactive Map - Dispensary Locations]
+            </div>
+            <div class="locations-list">
+                <div class="location-card">
+                    <div class="location-name">Green Leaf Dispensary</div>
+                    <div class="location-address">123 Wellness Ave, Oklahoma City, OK</div>
+                    <div class="location-phone">(405) 555-0123</div>
+                </div>
+                <div class="location-card">
+                    <div class="location-name">Nature's Remedy</div>
+                    <div class="location-address">456 Botanical Blvd, Tulsa, OK</div>
+                    <div class="location-phone">(918) 555-0456</div>
+                </div>
+                <div class="location-card">
+                    <div class="location-name">The Apothecary</div>
+                    <div class="location-address">789 Herbal Way, Norman, OK</div>
+                    <div class="location-phone">(405) 555-0789</div>
+                </div>
+                <div class="location-card">
+                    <div class="location-name">Pure Wellness Center</div>
+                    <div class="location-address">321 Balance St, Edmond, OK</div>
+                    <div class="location-phone">(405) 555-0321</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@exoticus.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(405) 555-EXOTICUS</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Business Office</h4>
+                            <p>123 Cultivation Lane, Oklahoma City, OK 73102</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="product">Product Information</option>
+                                <option value="wholesale">Wholesale Inquiry</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Exotic<span>us</span></div>
+                    <p>Craft cannabis focused on wellness, purity, and sustainable cultivation practices.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#facility">Our Facility</a></li>
+                        <li><a href="#strains">Our Strains</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#brand">Our Brand</a></li>
+                        <li><a href="#where-to-buy">Where to Buy</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">OMMA Compliance</a></li>
+                        <li><a href="#">Age Verification</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Exoticus. For use only by adults 21 years of age and older. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Age Gate Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const ageGate = document.getElementById('ageGate');
+            const confirmAge = document.getElementById('confirmAge');
+            const exitSite = document.getElementById('exitSite');
+            
+            // Check if user has already confirmed age
+            if (!localStorage.getItem('ageVerified')) {
+                ageGate.style.display = 'flex';
+            } else {
+                ageGate.style.display = 'none';
+            }
+            
+            confirmAge.addEventListener('click', function() {
+                localStorage.setItem('ageVerified', 'true');
+                ageGate.style.display = 'none';
+            });
+            
+            exitSite.addEventListener('click', function() {
+                window.location.href = 'https://www.google.com';
+            });
+            
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Strain Scrolling
+            const strainsScroll = document.getElementById('strainsScroll');
+            const scrollLeft = document.getElementById('scrollLeft');
+            const scrollRight = document.getElementById('scrollRight');
+            
+            scrollLeft.addEventListener('click', function() {
+                strainsScroll.scrollBy({
+                    left: -300,
+                    behavior: 'smooth'
+                });
+            });
+            
+            scrollRight.addEventListener('click', function() {
+                strainsScroll.scrollBy({
+                    left: 300,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animated Statistics
+            function animateValue(id, start, end, duration) {
+                const obj = document.getElementById(id);
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    obj.innerHTML = value;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // Trigger animation when statistics come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateValue('stat1', 0, 75, 2000);
+                        animateValue('stat2', 0, 12000, 2000);
+                        animateValue('stat3', 0, 14, 1500);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(document.querySelector('.process-stats'));
+            
+            // Contact Form Submission
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(contactForm);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const subject = formData.get('subject');
+                const message = formData.get('message');
+                
+                // In a real implementation, you would send this data to a server
+                // For this demo, we'll just show an alert
+                alert(`Thank you for your message, ${name}! We'll get back to you soon.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
